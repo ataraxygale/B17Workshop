@@ -4,81 +4,50 @@ class Numbers {
   constructor(data) {
     //data can either be a string or an array of numbers
     if (typeof data === "string") {
-      this.data = str.split(",").map((number) => number * 1);
+      this.data = data.split(",").map((number) => Number(number));
     } else {
       this.data = data;
     }
   }
 
-  //just do the class methods - will grade on 1-5 for how complete it is
-  class CarCompany{
-    constructor(cars){
-      this.cars = cars;
-
-    }
-  }
-
-  const toyota = new CarCompany(["corolla", "supra", "rav4"]);
-
-  whatIsThis() {
-    console.log(this);
-  }
-
-  logMyCars() {
-    this.cars.forEach(); => {
-      console.log(car);
-      };
-    }
-  }
-
-  toyota.LogMyCars()_
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   count() {
     //return the count of numbers in data
-    return str.length;
+    return this.data.length;
   }
+
   printNumbers() {
     //print the numbers in data
-
+    console.log(this.data.join(", "));
   }
+
   odds() {
     //return the odd numbers in data
-
+    return this.data.filter((number) => number % 2 !== 0);
   }
+
   evens() {
     //return the even numbers in data
-
+    return this.data.filter((number) => number % 2 === 0);
   }
+
   sum() {
     //return the sum of the numbers
-
+    return this.data.reduce((acc, number) => acc + number, 0);
   }
+
   product() {
     //return the product of the numbers
-
+    return this.data.reduce((acc, number) => acc * number, 1);
   }
+
   greaterThan(target) {
     //return the numbers greater than the target
-
+    return this.data.filter((number) => number > target);
   }
+
   howMany(target) {
     //return the count of a given number
-
+    return this.data.filter((number) => number === target).length;
   }
 }
 
